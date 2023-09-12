@@ -58,8 +58,15 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="post" action="sendmail.php">
+							<form method="post" action="/submit-form">
 								<p>You can contact me:</p>
+								<div class="field">
+									<label for="emailService">Email Service</label>
+									<select name="emailService" id="emailService">
+										<option value="hotmail">Hotmail</option>
+										<option value="gmail">Gmail</option>
+									</select>
+								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
@@ -111,6 +118,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- <script src="sendm.js"></script> -->
 
 	</body>
 </html>
