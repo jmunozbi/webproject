@@ -27,17 +27,17 @@ app.post('/submit-form', (req, res) => {
     // Configure nodemailer based on the selected email service
     let transporter;
     if (emailService === 'hotmail') {
-        transporter = createTransporter('Hotmail', 'your_hotmail_email@hotmail.com', 'your_hotmail_password');
+        transporter = createTransporter('Hotmail', email, 'your_hotmail_password');
     } else if (emailService === 'gmail') {
-        transporter = createTransporter('Gmail', 'your_gmail_email@gmail.com', 'your_gmail_password');
+        transporter = createTransporter('Gmail', email, 'your_gmail_password');
     } else {
         return res.status(400).send('Invalid email service selected.');
     }
 
     // Compose the email
     const mailOptions = {
-        from: transporter.options.auth.user,
-        to: 'joanmbio@hotmail.com',
+        from: email,
+        to: 'joanmbio@hotmail.com', // Your email address for receiving contact form submissions
         subject: 'New Contact Form Submission',
         text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`
     };
