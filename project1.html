@@ -41,15 +41,25 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>hola</p>
+									<h1>RBC deformation study through microchips</h1>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>hola</p>
+								<p>Despite the extensive research conducted over the past five decades to investigate the mechanical characteristics of Red Blood Cells (RBCs), the existing diagnostic landscape lacks the capability to offer comprehensive insights into individual cell behaviour. 
+									Therefore, the development of new diagnostic tools able to perform analysis at the scale of a single cell is urgently needed. When a RBC is suffering from a disorder, the mechanical properties can change and trigger fatal consequences in our bodies. 
+									In order to investigate the mechanical response of the RBCs, in this project RBCs are simulated in a Poiseuille flow through a microfluidic constriction. The aim of these simulations is to compute the flow and deformation of synthetic discretized cells using a computational fluid dynamics (<a href="https://en.wikipedia.org/wiki/Computational_fluid_dynamics">CFD</a>) software, which in this case is <a href="https://www.openfoam.com/">OpenFoam</a>, coupling via the Immersed Boundary Method (<a href="https://en.wikipedia.org/wiki/Immersed_boundary_method">IBM</a>).</p>
+								<div class="image projectgif3">
+									<img src="images/constriction4.gif" alt=""  width="780px" height="auto">
+									<p style="margin-left: 2.2cm;"> RBC flowing through a microchip constriction. The color gradient shows the velocity inside the microchip. 
+										<br>The velocity in the constriction section is higher (more red).</p>
+								</div>
+								<p> The RBCs were implented in <a href="https://www.mpacts.com/index.html">Mpcats</a>, which is based in Python, and the fluid is solved with simpleFoam solver of OpenFoam. The coupling handles the force from the cells and the velocity from the fluid to build up a bridge between CFD and cells. 
+									Via Lagrangian (Mpacts)-Eulerian (CFD) description the simulation is able to solve Navier-Stokes equation, update the velocity field, transfer this to the Lagrangian points, interpolate the new positions of the MPACTS nodes, calculate the forces from the nodes, couple back this forces to the Eulerian fluid and use them in the next timestep to solve again N-S equations. This configuration enables to implement the interaction between multiple cells and the fluid:	
+								</p>
+								<div class="image projectgif">
+									<img src="images/video.gif" alt=""  width="570px" height="auto">
+									<p style="margin-left: 3.2cm;">Various RBCs flowing through a microchip constriction.</p>
+								</div>
+								<p>You can explore the code in this github repository: <a href="">RBC deformation study through microchips</a></p>
 							</section>
-
 					</div>
 
 				<!-- Footer -->
